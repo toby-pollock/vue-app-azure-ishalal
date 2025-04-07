@@ -16,6 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Print username secret
+      run: echo "${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}"
+  
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
