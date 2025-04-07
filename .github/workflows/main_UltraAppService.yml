@@ -48,4 +48,4 @@ jobs:
         app-name: 'UltraAppService'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_754cdabea2a04157864d938bb902d3e3 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}/tpollock/ultraappservice:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}/ultraappservice:${{ github.sha }}'
