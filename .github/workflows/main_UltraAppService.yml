@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_180f0848d2c4421fb17549597af5bc9d }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_cc184cd17a484fb59912dc6ed5841691 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_f3e7d6b011ee475aab04245d631a15fa }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_180f0848d2c4421fb17549597af5bc9d }}/vue-app:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}/tpollock/ultraappservice:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'UltraAppService'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_98c1e9efd4f34712b4dd3b031750a407 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_180f0848d2c4421fb17549597af5bc9d }}/vue-app:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_754cdabea2a04157864d938bb902d3e3 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_59bc4be3003c4173a99d53af74a548dc }}/tpollock/ultraappservice:${{ github.sha }}'
